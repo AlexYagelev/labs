@@ -1,0 +1,24 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main()
+{
+int n,i,m[10000],j,tmp,RAZN;
+scanf_s("%d", &n);
+
+for (int i=0; i<n; i++) scanf_s("%d", &m[i]);
+
+for (int i=0 ; i < n-1; i++)
+ for (j=n-2;j>=i;j--)
+ if (m[j]>m[j+1])
+ {
+     tmp=m[j];
+     m[j]=m[j+1];
+     m[j+1]=tmp;
+
+ }
+//for (int i=0 ; i < n; i++) printf_s("%d ", m[i]);//для проверки че как оно ваще сортнулось или нет
+RAZN=m[n-1]-m[0];
+printf_s("\n%d", RAZN);
+return 0;
+}
